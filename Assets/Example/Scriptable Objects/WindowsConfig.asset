@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb863562e96de6e4aaf5ee27a9a97eef, type: 3}
+  m_Name: WindowsConfig
+  m_EditorClassIdentifier: 
+  MainCanvas: {fileID: 1246941102299939307, guid: 962569861fdcdcc46a79778f1f81c242, type: 3}
+  MenuWindow: {fileID: -6824134493527075762, guid: a3ee879274a96af42854b59b3f48e737, type: 3}
+  PauseWindow: {fileID: 6703689469503429837, guid: a7b36d2e1c76a5d489d3d98d995eadd0, type: 3}
