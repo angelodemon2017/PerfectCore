@@ -38,11 +38,13 @@ public class ProjectInstaller : MonoInstaller
         Container.BindFactory<UIWindow, UIWindow.Factory>();
         Container.Bind<MainMenuWindow>().FromComponentInNewPrefab(_windowsConfig.MenuWindow).AsSingle();
         Container.Bind<PauseWindow>().FromComponentInNewPrefab(_windowsConfig.PauseWindow).AsSingle();
+        Container.Bind<GameplayWindow>().FromComponentInNewPrefab(_windowsConfig.GameplayWindow).AsSingle();
     }
 
     private void InstallFSM()
     {
         Container.Bind<MainMenuState>().AsSingle();
         Container.Bind<GameplayState>().AsSingle();
+        Container.Bind<PauseMenuState>().AsSingle();
     }
 }

@@ -20,7 +20,7 @@ public class GameplayState : GameStateBase
 
     public override void EnterState()
     {
-        _uiService.ChangeWindow<PauseWindow>();
+        _uiService.ChangeWindow<GameplayWindow>();
     }
 
     public override void Update()

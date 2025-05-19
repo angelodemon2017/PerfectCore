@@ -26,7 +26,7 @@ public class UIService : IInitializable
 
     }
 
-    public void ChangeWindow<TState>() where TState : UIWindow
+    public TState ChangeWindow<TState>() where TState : UIWindow
     {
         foreach (var window in _openedWindows.Values)
         {
@@ -38,20 +38,7 @@ public class UIService : IInitializable
         var nextWindow = _container.Resolve<TState>();
         nextWindow.transform.SetParent(_rootCanvas.transform, false);
         ShowWindow<UIWindow>(nextWindow);
-    }
-
-    public void ChangeWindow(UIWindow nextWindow)
-    {
-        foreach (var window in _openedWindows.Values)
-        {
-            if (!window.IsPopup)
-            {
-                window.Hide();
-            }
-        }
-
-        nextWindow.transform.SetParent(_rootCanvas.transform, false);
-        ShowWindow<UIWindow>(nextWindow);
+        return nextWindow;
     }
 
     public void ShowWindow<T>(UIWindow window) where T : UIWindow

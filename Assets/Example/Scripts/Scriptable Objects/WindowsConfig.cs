@@ -7,4 +7,5 @@ public class WindowsConfig : ScriptableObject
 
     public MainMenuWindow MenuWindow;
     public PauseWindow PauseWindow;
+    public GameplayWindow GameplayWindow;
 }
