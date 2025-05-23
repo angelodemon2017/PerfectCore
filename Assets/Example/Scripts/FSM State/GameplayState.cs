@@ -27,7 +27,7 @@ public class GameplayState : GameStateBase
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            _fsmService.ChangeState<MainMenuState>();
+            _fsmService.ChangeState<PauseMenuState>();
         }
     }
 

@@ -1,4 +1,6 @@
-﻿public class MainMenuWindow : UIWindow
-{
+﻿using UnityEngine.UI;
 
+public class MainMenuWindow : UIWindow
+{
+    public Button _playBtn;
 }

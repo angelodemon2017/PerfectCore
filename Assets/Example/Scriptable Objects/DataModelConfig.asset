@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf71ea9cde43eb4a8e0766c80c10da8, type: 3}
+  m_Name: DataModelConfig
+  m_EditorClassIdentifier: 
+  userProfileModel:
+    UserName: Guest
+    Level: 1
+    Experience: 0
+  settingsModel:
+    MusicVolume: 0.7
+    SfxVolume: 0.8
+    VibrationEnabled: 1
+    language: 30

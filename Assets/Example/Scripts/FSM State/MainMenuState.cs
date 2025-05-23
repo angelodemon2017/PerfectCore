@@ -1,28 +1,38 @@
-﻿using UnityEngine;
-
-public class MainMenuState : GameStateBase
+﻿public class MainMenuState : GameStateBase
 {
+    private readonly SceneService _sceneService;
     private readonly FSMService _fsmService;
     private readonly UIService _uiManager;
 
-    public MainMenuState(FSMService fsmService, UIService uiManager)
+    private MainMenuWindow _mainMenuWindow;
+
+    public MainMenuState(
+        FSMService fsmService,
+        UIService uiManager,
+        SceneService sceneService)
     {
         _fsmService = fsmService;
         _uiManager = uiManager;
+        _sceneService = sceneService;
     }
 
     public override void EnterState()
     {
-        _uiManager.ChangeWindow<MainMenuWindow>();
+        _mainMenuWindow = _uiManager.ChangeWindow<MainMenuWindow>();
+        _mainMenuWindow._playBtn.onClick.AddListener(OnPlay);
+    }
+
+    private void OnPlay()
+    {
+        _sceneService.LoadLevel(1);
     }
 
     public override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            _fsmService.ChangeState<GameplayState>();
-        }
     }
 
-    public override void ExitState() { }
+    public override void ExitState() 
+    {
+        _mainMenuWindow._playBtn.onClick.RemoveListener(OnPlay);
+    }
 }

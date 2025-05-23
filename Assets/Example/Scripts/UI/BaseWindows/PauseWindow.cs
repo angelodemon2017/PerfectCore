@@ -1,9 +1,12 @@
-﻿public class PauseWindow : UIWindow
+﻿using UnityEngine;
+using TMPro;
+
+public class PauseWindow : UIWindow
 {
-    public int TestCounterView;
+    [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
 
-    public void UpdateView()
+    public void UpdateView(int counter)
     {
-
+        _textMeshProUGUI.text = $"{counter}";
     }
 }

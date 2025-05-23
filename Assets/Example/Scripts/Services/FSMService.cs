@@ -5,13 +5,16 @@ public class FSMService : IInitializable, ITickable, IFSM<GameStateBase>
     private DiContainer _container;
     private UIService _uiService;
     private GameStateBase _currentState;
+    private SceneService _sceneService;
 
     public GameStateBase GetCurrentState => _currentState;
 
-    public FSMService(DiContainer container, UIService uiService)
+    public FSMService(DiContainer container, UIService uiService, SceneService sceneService)
     {
         _container = container;
         _uiService = uiService;
+        _sceneService = sceneService;
+        _sceneService.OnLevelLoaded += OnSceneLoaded;
     }
 
     public void ChangeState<TState>() where TState : GameStateBase
@@ -25,6 +28,19 @@ public class FSMService : IInitializable, ITickable, IFSM<GameStateBase>
     public void Initialize()
     {
 
+    }
+
+    private void OnSceneLoaded(int level)
+    {
+        switch (level)
+        {
+            case 0:
+                ChangeState<MainMenuState>();
+                break;
+            case 1:
+                ChangeState<GameplayState>();
+                break;
+        }
     }
 
     public void Tick()

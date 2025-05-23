@@ -4,7 +4,7 @@ namespace Services
 {
     public interface ISceneService
     {
-        event Action<string> OnLevelLoaded;
+        event Action<int> OnLevelLoaded;
         void LoadLevel(int levelNumber);
         ILevelConfig GetCurrentLevelConfig();
     }
